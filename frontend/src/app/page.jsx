@@ -1,24 +1,11 @@
-const Page = async () => {
-  const axios = require('axios');
-  let response;
+import Link from 'next/link'
 
-  try {
-    response = await axios.get('http://localhost:8080/hadir');
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
+const Page = () => {
   return (
-    <div>
-      {response?.data.getData?.data?.map((data, index) => {
-        return (
-          <div key={index}>
-            <h1>{data.nama}</h1>
-            <h2>{data.no_absen}</h2>
-            <h3>{data.kelas}</h3>
-          </div>
-        )
-      })}
+    <div className="box-border flex flex-col align-center mt-5 max-w-screen-sm gap-5">
+      <h1 className="text-center text-2xl font-bold">AutoGenerate Attendace</h1>
+      <Link href={"/generate"} className='text-center bg-blue-200 w-auto h-10 font-medium rounded-md border-2 border-blue-300'>Generate</Link>
+      <Link href={"/validation"} className='text-center bg-blue-200 w-auto h-10 font-medium rounded-md border-2 border-blue-300'>Validate</Link>
     </div>
   );
 }
