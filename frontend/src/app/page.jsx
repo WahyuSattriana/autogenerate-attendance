@@ -1,16 +1,7 @@
-import { useEffect, useState } from "react";
-
-const Page = () => {
+const Page = async () => {
   
-  useEffect(() => {
-    fetch("http://localhost:8080/").then(
-      response => response.json()
-    ).then(
-      data => {
-        console.log(data)
-      }
-    )
-  })
+  const response =  await fetch("http://localhost:8080/");
+  const data = await response.json();
 
   return (
     <>
