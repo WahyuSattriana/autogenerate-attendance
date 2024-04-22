@@ -1,11 +1,16 @@
-const Generate = () => {
-  return(
+import axios from 'axios';
+import Image from 'next/image';
+import React from 'react';
+
+const Page = async () => {
+  const response = await axios.get('http://localhost:8080/generateRandomChar');
+  return (
     <div className="">
       <h1 className="text-center text-2xl font-bold">Generating QR Codes...</h1>
-      <p>shows qrcode here</p>
-      <p>shows the random char here</p>
+      <Image src={response.data.QRData} width={300} height={300} alt={response.data.hasil}></Image>
+      <p>{response.data.randomChar}</p>
     </div>
   )
 }
 
-export default Generate
+export default Page
