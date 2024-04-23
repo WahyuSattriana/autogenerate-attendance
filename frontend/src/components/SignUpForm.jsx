@@ -4,6 +4,20 @@ import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@
 import { Button } from "@/components/ui/button"
 
 const SignUpForm = () => {
+  async function onSubmit(event) {
+    event.preventDefault()
+
+    const formData = new FormData(event.target)
+    const response = await fetch('/api/submit', {
+      method: 'POST',
+      body: formData,
+    })
+
+    // Handle response if necessary
+    const data = await response.json()
+    // ...
+  }
+
   return (
     <div className="mx-auto max-w-md space-y-6">
       <div className="space-y-2 text-center">
