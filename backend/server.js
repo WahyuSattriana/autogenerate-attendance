@@ -25,13 +25,6 @@ app.get('/hadir', async (req, res) => {
   res.json({ getData });
 });
 
-app.post('/', async (req, res) => {
-  const { nama, no_absen, kelas } = req.body;
-  const insertData = await db.from('attendance').insert([{ nama, no_absen, kelas }]);
-  res.json({ insertData });
-});
-
 app.listen(port, () => {
   console.log('Server running...', port);
 });
-4
