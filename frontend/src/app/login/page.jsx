@@ -4,7 +4,7 @@ export default function LoginPage() {
   return (
     <form>
       <label htmlFor="nisn">NISN:</label>
-      <input id="nisn" name="nisn" type="number" required />
+      <input id="nisn" name="nisn" type="text" required />
       <label htmlFor="email">Email:</label>
       <input id="email" name="email" type="email" required />
       <label htmlFor="password">Password:</label>

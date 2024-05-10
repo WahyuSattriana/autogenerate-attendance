@@ -4,7 +4,7 @@ const QRCode = require('qrcode');
 const supabase = require('@supabase/supabase-js');
 
 const app = express();
-const port = 8080;
+const port = 10414;
 require('dotenv').config();
 
 app.use(express.json());

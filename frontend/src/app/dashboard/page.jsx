@@ -16,7 +16,7 @@ const Dashboard = async () => {
         <div className="grid grid-cols-2 gap-4">
           <div>
             <p className="text-lg font-semibold"></p>
-            <p className="text-lg font-semibold text-center">NISN: {data.user.nisn}</p>
+            <p className="text-lg font-semibold text-center">NISN: {data.user.user_metadata.nisn}</p>
             <p className="text-lg font-semibold text-center">Email: {data.user.email}</p>
           </div>
         </div>

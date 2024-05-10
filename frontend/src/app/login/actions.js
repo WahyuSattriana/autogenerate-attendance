@@ -8,7 +8,6 @@ import { createClient } from '@/utils/supabase/server'
 export async function login(formData) {
   const supabase = createClient()
   const data = {
-    nisn: formData.get('nisn'),
     email: formData.get('email'),
     password: formData.get('password'),
   }
@@ -25,18 +24,21 @@ export async function login(formData) {
 
 export async function signup(formData) {
   const supabase = createClient()
-  const data = {
-    nisn: formData.get('nisn'),
+
+  const { data, error } = await supabase.auth.signUp({
     email: formData.get('email'),
     password: formData.get('password'),
-  }
-
-  const { error } = await supabase.auth.signUp(data)
+    options: {
+      data: {
+        email: formData.get('email'),
+        nisn: formData.get('nisn'),
+      },
+    },
+  })
 
   if (error) {
     redirect('/error')
   }
-
   revalidatePath('/', 'layout')
   redirect('/')
 }
