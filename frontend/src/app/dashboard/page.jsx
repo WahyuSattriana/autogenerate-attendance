@@ -12,13 +12,10 @@ const Dashboard = async () => {
   return (
     <div>
       <section className="box-border flex flex-col align-center mt-5 max-w-screen-sm gap-5">
-        <h1 className="text-center text-2xl font-bold">This is a Dashboard</h1>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <p className="text-lg font-semibold"></p>
+        <h1 className="text-center text-2xl font-bold">Dashboard</h1>
+        <div className="flex flex-col">
             <p className="text-lg font-semibold text-center">NISN: {data.user.user_metadata.nisn}</p>
             <p className="text-lg font-semibold text-center">Email: {data.user.email}</p>
-          </div>
         </div>
       </section>
     </div>
