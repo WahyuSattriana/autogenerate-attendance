@@ -1,6 +1,7 @@
 const crypto = require('crypto');
 const express = require('express');
 const QRCode = require('qrcode');
+const supabase = require('@supabase/supabase-js');
 
 const app = express();
 const port = 8080;
